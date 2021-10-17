@@ -16,6 +16,7 @@ class CreatePizzasTable extends Migration
         Schema::create('pizzas', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->integer('order_id');
             $table->foreign('order_id')->references('id')->on('orders');
             $table->integer('pizza_number');
             $table->string('size');
