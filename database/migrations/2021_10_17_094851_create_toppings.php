@@ -16,6 +16,7 @@ class CreateToppings extends Migration
         Schema::create('toppings', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->integer('pizza_id');
             $table->foreign('pizza_id')->references('id')->on('pizzas');
             $table->integer('area');
             $table->string('type');
